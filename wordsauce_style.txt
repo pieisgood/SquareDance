@@ -1,0 +1,15 @@
+{"block_one" :"wordsauce_duck_block.png",
+ "block_two" :"kitt_wordsauce_block.png",
+ "map_image" :"map_part_c_wordsauce.png",
+ "background" :"wordsauce_background.png",
+ "bar_image" :"bar_image.png",
+ "highlight_one" :"highlight_one.png",
+ "highlight_two" :"highlight_two.png",
+ "small_highlight" :"sequential_highlight_image.png",
+ "Pause_Background" :"PauseBackground.png",
+ "top_row" :"top_row.png",
+ "move_sound" :"move_sound.wav",
+ "delete_sound" :"delete_sound.wav",
+ "background_music" :"stepping_time.ogg",
+ "gameover_sound" :"gameover_sound.wav"
+}
