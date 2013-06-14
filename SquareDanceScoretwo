@@ -1,0 +1,20 @@
+import os, sys
+import pygame
+
+
+#a class for handling the current score of the player
+
+class SquareDanceScore:
+
+    def __init__(self, blockScore):
+        self.currentScore = 0
+        self.blockScore = blockScore
+
+
+    def getScore(self):
+        return self.currentScore
+
+    def updateScore(self, blocks, multiplier):
+        self.currentScore = self.currentScore + blocks*blockScore*multiplier
+        return True
+    

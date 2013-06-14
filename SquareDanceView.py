@@ -100,6 +100,10 @@ class Style:
         tRender = font.render(text, 1, (10, 10, 10))
         self.Screen.blit(tRender, (x,y))
         return True
+    
+    def render_score(self, scoreStr):
+        self.render_text(scoreStr, 0,0)
+        return True
 
     def render_fps(self, msDelta):
         font = pygame.font.Font(None, 20)

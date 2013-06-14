@@ -9,6 +9,7 @@ from SquareDanceMap import *
 from SquareDanceController import *
 from SquareDanceSList import *
 from SquareDanceMenu import *
+from SquareDanceScore import *
 #A class to handle creation of all our classes
 class SquareFactory:
 
@@ -28,6 +29,9 @@ class SquareFactory:
     def newBlock(self,color):
         rBlock = Block(color)
         return rBlock
+
+    def newScore(self):
+        return SquareDanceScore()
 
     def newStyle(self,style_name, screen, width, height):
         inStyle = open(style_name.strip(), 'r')
@@ -59,8 +63,8 @@ class SquareFactory:
             StyleList.add_style(self.newStyle(style["Style_Name"], screen, width, height))
         return StyleList
 
-    def newSquareController(self, evManager , style, screen, aMap, state):
-        return SquareController(evManager, style, screen, aMap, state)
+    def newSquareController(self, evManager , style, screen, aMap, state, score):
+        return SquareController(evManager, style, screen, aMap, state, score)
 
     def newSquareMenu(self, state, screen, width, height):
         Menu = SquareDanceMenu(state, screen)

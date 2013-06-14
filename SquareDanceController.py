@@ -11,12 +11,13 @@ RIGHT = 3
 
 class SquareController:
 	
-	def __init__(self, evManager, style, screen, aMap, state):
+	def __init__(self, evManager, style, screen, aMap, state, score):
                 self.evManager = evManager
                 self.evManager.RegisterListener( self )
                 self.styleList = style
 		self.view = self.styleList.get_current_style()
 		self.model = aMap
+		self.score = score
 		self.bar_tick = 0
 		self.screen = screen
 		self.state = state
@@ -58,7 +59,7 @@ class SquareController:
                         self.model.drop_blocks()
                         self.model.find_squares()
                         self.model.square_highlights_check()
-                        if self.model.delete_sequential():
+                        if self.model.delete_sequential(self.score):
                                 self.view.play_delete_sound()
                         if not(self.model.game_check()):
                                 self.state.set_state("GameOver")
@@ -81,6 +82,7 @@ class SquareController:
                         self.view.render_sequential_highlights(sequential, pMap)
                         self.view.render_bar(self.model.get_bar(), self.combo)
                         self.view.render_fps(msBar)
+                        self.view.render_score(self.score.get_scoreStr())
                         if self.fade:
                                 self.fadeSurface.set_alpha(self.alphaFade)
                                 self.alphaFade -= 2

@@ -71,7 +71,7 @@ class SquareDanceMap:
         
         
 
-    def delete_sequential(self):
+    def delete_sequential(self, score):
         location = self.bar.get_position()
         location = location.get_x()
         empty = True
@@ -100,6 +100,7 @@ class SquareDanceMap:
                         self.highlights[x][y] = None
                         deleted_something += 1
             if deleted_something > 0 :
+                score.calculate_newScore(self.combo, deleted_something)
                 return True
         else:
             return False

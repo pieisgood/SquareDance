@@ -23,5 +23,6 @@ class SquareDanceScore:
         return True
 
     def calculate_newScore(self, comboCount, blockCount):
-        #stuff for getting a newScore goes here
+        self.currentScore += 10*blockCount*comboCount
+        self.currentScoreStr = str(self.currentScore)
         return True

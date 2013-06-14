@@ -25,7 +25,7 @@ class SquareDanceMain:
         self.screen = pygame.display.set_mode((self.width, self.height))
         self.menuSystem = SquareMenuController(self.evManager, self.state, gFactory.newSquareMenu(self.state, self.screen, self.width, self.height))
         self.styleList = gFactory.newStyleList( self.screen, self.width, self.height)
-        self.sController = gFactory.newSquareController(self.evManager, self.styleList, self.screen, gFactory.createMap(self.width,self.height), self.state)
+        self.sController = gFactory.newSquareController(self.evManager, self.styleList, self.screen, gFactory.createMap(self.width,self.height), self.state, gFactory.newScore())
         self.CPUTicker = SquareCPUController(self.evManager, self.state)
         self.KeyBoard = SquareKeyBoardController( self.evManager, self.state)
 
